@@ -1,0 +1,38 @@
+package sba2;
+
+
+	
+
+	class InvalidmarkException extends Exception {
+
+		public InvalidmarkException(String s) { 
+			super(s);
+			
+	}
+	}
+	public class example
+	{
+		void productcheck(int mark) throws InvalidmarkException{
+			if(mark>100)
+			{
+				throw new InvalidmarkException("invalid");
+				
+			}
+			else
+			{
+				System.out.println(mark+"valid mark");
+			}
+		}public static void main(String[] args) {
+			example obj=new example();
+			try {
+				obj.productcheck(99);;
+				
+			}
+			catch(InvalidmarkException e)
+			{
+				System.out.println("caught the exception");
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+
